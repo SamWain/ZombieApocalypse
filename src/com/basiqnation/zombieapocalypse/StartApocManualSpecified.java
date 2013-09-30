@@ -1,15 +1,15 @@
-package com.basiqnation.ZombieApocalypse;
+package com.basiqnation.zombieapocalypse;
 
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class StartApocManual extends Event
+public class StartApocManualSpecified extends Event
 {
   private static final HandlerList handlers = new HandlerList();
   private String message;
   private int zombies;
 
-  public StartApocManual(int z)
+  public StartApocManualSpecified(int z)
   {
     this.zombies = z;
   }

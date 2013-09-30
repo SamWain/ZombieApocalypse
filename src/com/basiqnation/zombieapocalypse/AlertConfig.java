@@ -1,4 +1,4 @@
-package com.basiqnation.ZombieApocalypse;
+package com.basiqnation.zombieapocalypse;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

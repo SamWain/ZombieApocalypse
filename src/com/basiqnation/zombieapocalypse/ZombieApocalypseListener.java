@@ -1,4 +1,4 @@
-package com.basiqnation.ZombieApocalypse;
+package com.basiqnation.zombieapocalypse;
 
 import java.util.ArrayList;
 import java.util.Random;

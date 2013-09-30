@@ -1,5 +1,5 @@
-main: com.basiqnation.ZombieApocalypse
 name: ZombieApocalypse
+main: com.basiqnation.zombieapocalypse.ZombieApocalypse
 version: 1.4.4
 author: xS1mple & sheodox
 description: Adds a world event for a zombie apocalypse.

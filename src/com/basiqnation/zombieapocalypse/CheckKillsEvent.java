@@ -1,21 +1,22 @@
-package com.basiqnation.ZombieApocalypse;
+package com.basiqnation.zombieapocalypse;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class StartApocManualSpecified extends Event
+public class CheckKillsEvent extends Event
 {
   private static final HandlerList handlers = new HandlerList();
   private String message;
-  private int zombies;
+  private CommandSender pl;
 
-  public StartApocManualSpecified(int z)
+  public CheckKillsEvent(CommandSender p)
   {
-    this.zombies = z;
+    this.pl = p;
   }
 
-  public int getZombies() {
-    return this.zombies;
+  public CommandSender getPlayer() {
+    return this.pl;
   }
 
   public String getMessage() {

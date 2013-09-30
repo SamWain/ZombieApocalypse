@@ -1,9 +1,9 @@
-package com.basiqnation.ZombieApocalypse;
+package com.basiqnation.zombieapocalypse;
 
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class ZombieApocalypseMorningEvent extends Event
+public class ZombieApocalypseStartEvent extends Event
 {
   private static final HandlerList handlers = new HandlerList();
   private String message;

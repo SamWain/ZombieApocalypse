@@ -1,4 +1,4 @@
-package com.basiqnation.ZombieApocalypse;
+package com.basiqnation.zombieapocalypse;
 
 import java.io.File;
 import org.bukkit.Bukkit;
