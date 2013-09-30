@@ -1,0 +1,9 @@
+main: com.basiqnation.ZombieApocalypse
+name: ZombieApocalypse
+version: 1.4.4
+author: xS1mple & sheodox
+description: Adds a world event for a zombie apocalypse.
+commands:
+  za:
+    description: displays information about the Zombie Apocalypse plugin
+    usage: /<command>

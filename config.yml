@@ -1,0 +1,54 @@
+#Enter the name of the world you want to use for the zombie apocalypse
+#Replace "world" with whatever your server's world is
+world: world
+#numzombies is the amount of zombies you want to spawn per person from a default event.
+numzombies: 40
+#set a hard limit for the number of zombies spawned. if numzombies*players is greater
+#than this number it will only spawn as many zombies as hardlimit. 
+#any number less than one means there is no limit.
+hardlimit: -1
+#this number is for the chance for an apocalypse to happen the chance is 1/number
+#for example: if you want a 20% chance, enter 5. (1/5 = 0.2 = 20%)
+chance: 5
+#The next two are for disabling/enabling some chat messages
+#warning of the possibility for a zombie apocalypse (happens at 8:00 PM)
+warningmsg: true
+
+#message if a zombie apocalypse didn't happen
+safemsg: false
+
+#amount of diamonds to give if lucky enough to get them!
+diamonds_amount: 2
+
+## Messages ##
+#message for when the zombie apocalypse is about to start
+warning: 'There are sounds coming from the ground, the dead might soon awake!'
+
+#message for the start of a zombie apocalypse
+started: 'The horde of the undead have been let loose! Survive!'
+
+#message if the zombie apocalypse isn't running and /za kills is run
+notrunnning: 'The undead are still sleeping, try again during the apocalypse.'
+
+#message when half of the zombies are killed
+halfway: 'You are halfway there! Slaughter the undead mercilessly!'
+
+#message when the zombie apocalypse is finished and player survived
+complete: 'Congratulations! You have defended yourself from the undead!'
+
+#message when player is killed during apocalypse
+failed: 'You have failed! The zombies have overwhelmed you.'
+
+#message when trying to sleep while zombie apocalypse is running
+nosleep: 'You''re too scared to sleep during the zombie apocalypse.'
+
+#message when no one is arround to start zombie apocalypse
+noplayers: 'Nobody is around, the disappointed zombies return to their graves.'
+
+## Reward Messages ##
+reward_sword: 'Well done, hero. You are awarded with this sword of champions!'
+reward_chestplate: 'Well done, hero. You are awarded with this chestplate of champions!'
+reward_diamonds: 'Lucky! You are rewarded with some diamonds!'
+
+#when you have configured this file with your world's name change false to true
+configured: false
