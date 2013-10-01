@@ -1,9 +1,34 @@
 name: ZombieApocalypse
 main: com.basiqnation.zombieapocalypse.ZombieApocalypse
-version: 1.4.4
+version: 1.5
 author: xS1mple & sheodox
 description: Adds a world event for a zombie apocalypse.
 commands:
   za:
-    description: displays information about the Zombie Apocalypse plugin
+    description: Displays information about the Zombie Apocalypse plugin
     usage: /<command>
+  za help:
+    description: Displays information about the Zombie Apocalypse plugin
+    usage: /<command> help
+  za start:
+    description: Manually starts a Zombie Apocalypse
+    usage: /<command> start [integer]
+  za kills:
+    description: Displays the amount of kills to complete an Apocalypse
+    usage: /<command> kills
+permissions:
+  zombieapocalypse.start:
+    default: op
+    description: Manually start a ZombieApocalypse.
+  zombieapocalypse.start.amount:
+    default: op
+    description: Manually start a ZombieApocalypse with a specified amount.
+  zombieapocalypse.help:
+    default: op
+    description: Information about ZombieApocalypse.
+  zombieapocalypse.reward:
+    default: op
+    description: Allows a player to recieve a reward for completing a Zombie Apocalypse.
+  zombieapocalypse.kills:
+    default: true
+    description: Displays the amount of kills to complete an Apocalypse.

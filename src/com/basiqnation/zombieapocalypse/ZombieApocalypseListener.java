@@ -20,6 +20,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.PluginManager;
+import net.milkbowl.vault.permission.Permission;
 
 public class ZombieApocalypseListener implements Listener, Runnable {
   private ZombieApocalypse plugin;
@@ -88,43 +89,53 @@ public class ZombieApocalypseListener implements Listener, Runnable {
           }
 
           rng = new Random();
+                    
           for (Player p : this.pInvolved){
-            int reward = rng.nextInt(100);
 
-            if (reward == 0){
-                p.sendMessage(ChatColor.GREEN + reward_sword);
-                if (p.getWorld().toString().equals("CraftWorld{name=" + this.worldname + "}")){
-                  ItemStack itm = new ItemStack(Material.DIAMOND_SWORD);
-                  itm.addEnchantment(Enchantment.DAMAGE_UNDEAD, 5);
-                  itm.addEnchantment(Enchantment.DURABILITY, 3);
-                  itm.addEnchantment(Enchantment.KNOCKBACK, 2);
-                  itm.addEnchantment(Enchantment.FIRE_ASPECT, 2);
-                  PlayerInventory p_i = p.getInventory();
-                  p_i.addItem(new ItemStack[] { itm });
-                }
+            if (p.hasPermission("zombieapocalypse.reward")){
+	            int reward = rng.nextInt(100);
+	
+	            if (reward == 0){
+	                p.sendMessage(ChatColor.GREEN + reward_sword);
+	                if (p.getWorld().toString().equals("CraftWorld{name=" + this.worldname + "}")){
+	                  ItemStack itm = new ItemStack(Material.DIAMOND_SWORD);
+	                  itm.addEnchantment(Enchantment.DAMAGE_UNDEAD, 5);
+	                  itm.addEnchantment(Enchantment.DURABILITY, 3);
+	                  itm.addEnchantment(Enchantment.KNOCKBACK, 2);
+	                  itm.addEnchantment(Enchantment.FIRE_ASPECT, 2);
+	                  PlayerInventory p_i = p.getInventory();
+	                  p_i.addItem(new ItemStack[] { itm });
+	                }
+	            }
+	            else if (reward == 1){
+	                p.sendMessage(ChatColor.AQUA + reward_chestplate);
+	                if (p.getWorld().toString().equals("CraftWorld{name=" + this.worldname + "}")){
+	                  ItemStack itm = new ItemStack(Material.DIAMOND_CHESTPLATE);
+	                  itm.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+	                  itm.addEnchantment(Enchantment.THORNS, 3);
+	                  itm.addEnchantment(Enchantment.DURABILITY, 3);
+	                  PlayerInventory p_i = p.getInventory();
+	                  p_i.addItem(new ItemStack[] { itm });
+	                }
+	            }
+	            else if (reward >=2 && reward <= 25){
+	                giveDiamond(p);
+	            }
+	            else if (reward >=26 && reward <= 100){
+	                if (p.getWorld().toString().equals("CraftWorld{name=" + this.worldname + "}")){
+	                    ItemStack itm = new ItemStack(Material.DIAMOND);
+	                    PlayerInventory p_i = p.getInventory();
+	                    p_i.addItem(new ItemStack[] { itm });
+	                }
+	            }            
             }
-            else if (reward == 1){
-                p.sendMessage(ChatColor.AQUA + reward_chestplate);
-                if (p.getWorld().toString().equals("CraftWorld{name=" + this.worldname + "}")){
-                  ItemStack itm = new ItemStack(Material.DIAMOND_CHESTPLATE);
-                  itm.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
-                  itm.addEnchantment(Enchantment.THORNS, 3);
-                  itm.addEnchantment(Enchantment.DURABILITY, 3);
-                  PlayerInventory p_i = p.getInventory();
-                  p_i.addItem(new ItemStack[] { itm });
-                }
+            else {
+            	p.sendMessage(ChatColor.AQUA + "Sorry, you need to be registered to get rewards!");
             }
-            else if (reward >=2 && reward <= 25){
-                giveDiamond(p);
-            }
-            else if (reward >=26 && reward <= 100){
-                if (p.getWorld().toString().equals("CraftWorld{name=" + this.worldname + "}")){
-                    ItemStack itm = new ItemStack(Material.DIAMOND);
-                    PlayerInventory p_i = p.getInventory();
-                    p_i.addItem(new ItemStack[] { itm });
-                }
-            }            
           }
+          
+          
+          
         }
       }
     }
